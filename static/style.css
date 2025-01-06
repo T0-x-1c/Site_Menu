@@ -1,0 +1,25 @@
+body {
+    background: rgb(255, 240, 191);
+    color: rgb(66, 65, 65);
+    font-family: Georgia;
+}
+
+main {
+    margin: 5%;
+}
+
+.about {
+    background: rgb(217, 88, 226);
+}
+
+.button {
+    background: purple;
+    color: white;
+    text-decoration: none;
+    padding: 1%;
+    margin: 20px;
+    width: 50px;
+    border: 2px solid white;
+    border-radius: 15px;
+    box-shadow: 10px 5px 5px black;
+}

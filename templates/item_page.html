@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>{{item[1]}}</title>
+{% endblock title %}
+{% block content %}
+    <main class="container">
+        <h1>{{item[1]}}</h1>
+        <img src="{{ url_for('static', filename='img/'+item[3]) }}" class="img-fluid my-3" alt="...">
+        {% for p in item[2].split('\n') %}
+            <p>{{p}}</p>
+        {% endfor %}
+
+        <a class="btn btn-dark" href="javascript:history.back()" role="button" color="green">Назад</a>
+    </main>
+{% endblock content %}
