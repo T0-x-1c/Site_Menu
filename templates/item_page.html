@@ -1,15 +1,17 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
 {% block title %}
 <title>{{item[1]}}</title>
 {% endblock title %}
 {% block content %}
-    <main class="container">
-        <h1>{{item[1]}}</h1>
-        <img src="{{ url_for('static', filename='img/'+item[3]) }}" class="img-fluid my-3" alt="...">
-        {% for p in item[2].split('\n') %}
-            <p>{{p}}</p>
-        {% endfor %}
-
-        <a class="btn btn-dark" href="javascript:history.back()" role="button" color="green">Назад</a>
+    <main class="container" style="max-width: 900px; margin: 50px auto; background-color: #fff5cc; padding: 20px; border-radius: 10px; display: flex; align-items: flex-start; gap: 20px;">
+        <div style="flex: 1;">
+            <img src="{{ url_for('static', filename='img/'+item[3]) }}" class="img-fluid" alt="..." style="border-radius: 10px; width: 100%;">
+        </div>
+        <div style="flex: 1; text-align: left;">
+            <h1 style="font-size: 24px; margin-bottom: 15px;">{{item[1]}}</h1>
+            <p style="font-size: 20px; font-weight: bold; color: #333;">{{item[4]}} ₴</p>
+            <p style="font-size: 14px; color: #555;">Категорія: {{item[5]}}</p>
+            <a class="btn btn-dark" href="javascript:history.back()" role="button" style="margin-top: 20px; padding: 10px 20px;">Назад</a>
+        </div>
     </main>
 {% endblock content %}
