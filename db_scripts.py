@@ -49,3 +49,15 @@ class DataBaseManager:
         data = self.cursor.fetchall()
         self.close()
         return data
+
+    def get_item(self, item_id):
+        self.open()
+        self.cursor.execute("""
+            SELECT items.*, categories.title AS category_title
+            FROM items
+            JOIN categories ON items.category_id = categories.id
+            WHERE items.id = ?
+        """, [item_id])
+        data = self.cursor.fetchone()
+        self.close()
+        return data
